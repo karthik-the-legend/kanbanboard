@@ -1,0 +1,148 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #acacda;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Kanban Board Wrapper */
+.board {
+  width: 90%;
+  max-width: 1200px;
+  background: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Task Input Form */
+form#todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+form#todo-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+form#todo-form button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form#todo-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Kanban Board Lanes */
+.lanes {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.swim-lane {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.swim-lane h3 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* Task Styles */
+.task {
+  background-color: #e9ecef;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  font-size: 16px;
+  cursor: grab;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task.is-dragging {
+  opacity: 0.5;
+}
+
+.task:hover {
+  background-color: #dee2e6;
+}
+
+/* Delete Button for Tasks */
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
+/* Add New Lane Button */
+#add-lane {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#add-lane:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .lanes {
+    flex-direction: column;
+  }
+
+  .swim-lane {
+    min-width: 100%;
+  }
+}
